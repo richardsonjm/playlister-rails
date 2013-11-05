@@ -25,7 +25,7 @@ Configure our spec_helper
   1. Add SimpleCov
   ```ruby
   require 'simplecov'
-  SimpleCov.start
+  SimpleCov.start 'rails'
   ```
 
   2. Comment on Fixtures as we'll use factory_girl
@@ -53,7 +53,7 @@ Configure our spec_helper
     DatabaseCleaner.clean
   end
   ```
-  
+
 Create feature_helper.rb in spec
 
 ```ruby
