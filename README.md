@@ -38,6 +38,22 @@ Configure our spec_helper
   config.use_transactional_fixtures = false
   ```
 
+  4. Add in Database Cleaner
+  ```ruby
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+  ```
+  
 Create feature_helper.rb in spec
 
 ```ruby
@@ -74,3 +90,4 @@ guard 'rspec' do
 
 end
 ```
+
