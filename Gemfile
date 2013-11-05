@@ -54,5 +54,6 @@ group :test, :development do
   gem 'factory_girl'
   gem 'simplecov'
   gem 'database_cleaner'
+  gem 'guard-rails'
 end
 
