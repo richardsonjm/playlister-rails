@@ -54,6 +54,7 @@ group :test, :development do
   gem 'factory_girl'
   gem 'simplecov'
   gem 'database_cleaner'
-  gem 'guard-rails'
+  gem 'guard', '>=2.1.0'
+  gem 'guard-rspec'
 end
 
