@@ -19,11 +19,21 @@ class SongsController < ApplicationController
 
   # GET /songs/1/edit
   def edit
+    # song = Song.find(params[:id])
+    # @artist = song.artist
   end
 
   # POST /songs
   # POST /songs.json
   def create
+    # params
+    # {
+    #   :song => {
+    #     :name => "Song Name",
+    #     :genre_names => "c,s,v,genres",
+    #     :artist_name => "Test",
+    #   }
+    # }
     @song = Song.new(song_params)
 
     respond_to do |format|
@@ -69,6 +79,6 @@ class SongsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
-      params.require(:song).permit(:name)
+      params.require(:song).permit(:name, :artist_name, :genre_names)
     end
 end
